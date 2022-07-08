@@ -1,6 +1,5 @@
 import numpy as np
 import networkx as nx
-from preprocessing import generate_graph
 import torch
 from torch.utils.data import WeightedRandomSampler
 from torchmetrics import ConfusionMatrix
