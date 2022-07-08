@@ -152,10 +152,7 @@ def theta(y_probs, r):
 def m_evolve(model, train_graphs, val_graphs, train_batch_size, val_batch_size, num_iter=5):
     """ The final M-Evolve algorithm from the paper. Iteratively adds data to the training set
         by modifying edge connections in the previous dataset. Only adds new points with sufficient
-        label reliability. For this to work, ensure that the following line is added to
-        validation_epoch_end in model.py:
-
-        >>> self.y_probs = torch.hstack(y_probs, y)
+        label reliability.
     """
 
     logger = TBL('tb_logs', name='Augmentation Experiment')
