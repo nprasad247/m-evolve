@@ -1,6 +1,5 @@
 import numpy as np
 from numpy.random import choice
-
 import networkx as nx
 from torch_geometric.utils import to_networkx, from_networkx, remove_self_loops
 from rdkit.Chem import MolFromSmiles
@@ -13,8 +12,12 @@ import pytorch_lightning as pl
 from torch_geometric.data.data import Data
 from fractions import Fraction
 from torch.utils.data import WeightedRandomSampler
-#from numba import cuda
 
+"""
+Implementation of M-Evolve: M-Evolve: Structural-Mapping-Based Data Augmentation for Graph Classification.
+(Jiajun Zhou, Jie Shen, Shanqing Yu, Guanrong Chen, Qi Xuan)
+Paper can be found at https://arxiv.org/abs/2007.05700
+"""
 
 def length_2_paths(graph, node1, node2):
     """ Get the open triads described in the paper"""
